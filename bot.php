@@ -35,9 +35,18 @@ if (!is_null($events['events'])) {
 					$findStr = strpos($event['message']['text'],"==");
 					$subStrAns = substr($event['message']['text'],0,$findStr);
 					$subStrAsk = substr($event['message']['text'],$findStr+2);
-					$text = 'ok, I remember.';
+
+					$sql = "INSERT INTO heroku_359cfa1beb94615.detail (id, ask, ans)
+					VALUES (NULL, '.$subStrAsk.', '.$subStrAns.')";
+					
+					if ($conn->query($sql) === TRUE) {
+						$text =  "I remembered!";
+					} else {
+						$text =  "I can't Remember!";
+					}
+
 				}else{
-					$text = 'I dont know -- :'.$event['message']['text'];
+					$text = 'I dont know ';
 				  }				
 			}       
             
