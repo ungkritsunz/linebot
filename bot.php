@@ -15,25 +15,25 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-            // $text = $event['message']['text'];
-            $inputText = $event['message']['type'];
-            $responseMessage = array_search($inputText, $arr);
+             $text = $event['message']['text'];
+            // $inputText = $event['message']['type'];
+            // $responseMessage = array_search($inputText, $arr);
 
-            if($responseMessage!=null){
-                $text = $responseMessage.'not null';
+            // if($responseMessage!=null){
+            //     $text = $responseMessage.'not null';
 
-                if(strpos($inputText,"==")!=null){
-                    $findStr = strpos($str,"==");
-                    $subStrAns = substr($inputText,0,$findStr);
-                    $subStrAsk = substr($str,$findStr+2);
-                    $newArr = array($subStrAns=>$subStrAsk);
-                    $arr = array_merge($arr, $newArr);
-                    $text = "รู้แล้ว";
-                  }
+            //     if(strpos($inputText,"==")!=null){
+            //         $findStr = strpos($str,"==");
+            //         $subStrAns = substr($inputText,0,$findStr);
+            //         $subStrAsk = substr($str,$findStr+2);
+            //         $newArr = array($subStrAns=>$subStrAsk);
+            //         $arr = array_merge($arr, $newArr);
+            //         $text = "รู้แล้ว";
+            //       }
 
-            }else{  
-                $text = 'ไม่รู้จักจ้า';
-            }
+            // }else{  
+            //     $text = 'ไม่รู้จักจ้า';
+            // }
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
