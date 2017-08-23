@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			//$text = $event['message']['text'];
 			$inputText = $event['message']['type'];
 			$responseMessage = array_search($inputText, $arr);
-			$text = 'xxx';
+			$text = $event['message']['type'];;
 
 
 
@@ -52,4 +52,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKs";
+echo "OK1";
