@@ -1,6 +1,6 @@
 <?php
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
-$arr = array('ans' => 'ask');
+$arr = array('ไม่บอกอิอิ' => 'ชื่อไร');
 $inputText='';
 $responseMessage='';
 // Get POST body content
@@ -20,9 +20,9 @@ if (!is_null($events['events'])) {
             $responseMessage = array_search($event['message']['text'], $arr);
 
             if($responseMessage!=null){
-                $text = $responseMessage.'not null';
+                $text = $responseMessage;
 
-                if(strpos($inputText,"==")!=null){
+                if(strpos($event['message']['text'],"==")!=null){
                     $findStr = strpos($str,"==");
                     $subStrAns = substr($$event['message']['text'],0,$findStr);
                     $subStrAsk = substr($str,$findStr+2);
