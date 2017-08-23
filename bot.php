@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
                     $text = "รู้แล้ว";
                   }
             }else{
-                $text = "ไม่รู้จัก";
+                $text = "ไม่รู้จัก".' '.$inputText.' '.$responseMessage;
             }
             
 			// Get replyToken
