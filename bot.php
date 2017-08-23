@@ -10,7 +10,7 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
 $sql = "SELECT id, ask, ans FROM detail";
 $result = $conn->query($sql);
-
+$text='';
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
             // $text = $event['message']['text'];
             //$inputText = $event['message']['type'];
 			//$responseMessage = array_search($event['message']['text'], $arr);
-			$text='';
+			
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
@@ -50,10 +50,11 @@ if (!is_null($events['events'])) {
 				$text = 'I dont know';
 			}
 
-			if(strpos($event['message']['text'],"==")!=null){
+			if(strpos($event['message']['text'],"==")>0){
                 $findStr = strpos($event['message']['text'],"==");
                 $subStrAns = substr($event['message']['text'],0,$findStr);
-                $subStrAsk = substr($event['message']['text'],$findStr+2);
+				$subStrAsk = substr($event['message']['text'],$findStr+2);
+				$text = 'i know';
                 // $newArr = array($subStrAns=>$subStrAsk);
 				// $arr = array_merge($arr, $newArr);
 				// 	foreach($arr as $arrs){
