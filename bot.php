@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
                     $text = "รู้แล้ว";
                   }
 
-            }else{
+            }else{  
                 $text = 'ไม่รู้จักจ้า'.' + '.$event['message']['type'].' + '.$responseMessage;
             }
             
