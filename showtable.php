@@ -11,8 +11,8 @@ $conn = new mysqli($server, $username, $password, $db);
             echo "<table style="width:100%">";
             while($row = $result->fetch_assoc()) {
                     echo ="<tr>";
-                    echo ="<td>'$row["ask"]'</td>";
-                    echo ="<td>'$row["ans"]'</td>";
+                    echo ="<td>".$row["ask"]."</td>";
+                    echo ="<td>".$row["ans"]."</td>";
                     echo ="</tr>";
             }
             echo "</table>";
