@@ -13,7 +13,7 @@ $conn = new mysqli($server, $username, $password, $db);
                     echo ="<tr>";
                     echo ="<td>'$row["ask"]'</td>";
                     echo ="<td>'$row["ans"]'</td>";
-                    echo "</tr>";
+                    echo ="</tr>";
             }
             echo "</table>";
         }        
