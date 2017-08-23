@@ -13,9 +13,9 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
             // $text = $event['message']['text'];
-            $text = "ssssszzz";
-            if($event['message']['type'] != 'text'){
-                $text = "aaaaa";
+            $text = "xxxx";
+            if($event['type'] != 'message' && $event['message']['type'] != 'text'){
+                $text = "zz";
             }
 			// Get replyToken
 			$replyToken = $event['replyToken'];
