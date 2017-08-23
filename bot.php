@@ -14,6 +14,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
             // $text = $event['message']['text'];
+            $inputText = $event['message']['type'] == 'text';
             $text = "xxxxz";
             
 			// Get replyToken
@@ -52,7 +53,7 @@ $ans = 'hello';
 $ask = 'bello';
 $newArr = array($ans=>$ask);
 $resultMerge = array_merge($arr, $newArr);
-$responseMessage = array_search('ดีคับ', $result);
+$responseMessage = array_search('ดีคับ', $resultMerge);
 echo $responseMessage;
 echo 'เทสๆ';
 ?>
