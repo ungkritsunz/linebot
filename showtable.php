@@ -5,17 +5,19 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
-	$sql = "SELECT id, ask, ans FROM detail";
+$sql = "SELECT id, ask, ans FROM detail";
 	$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
-            echo "<table >";
-            while($row = $result->fetch_assoc()) {
-                    echo ="<tr>";
-                    echo ="<td>".$row["ask"]."</td>";
-                    echo ="<td>".$row["ans"]."</td>";
-                    echo ="</tr>";
-            }
-            echo "</table>";
+            echo '<table class="table-bordered">';
+            echo '<thead>';
+            echo '<tr> <th>Delete</th> <th>Keywords</th> <th>Answers</th> </tr>';
+            echo '</thead><tbody>';
+                while ($row = $result->fetch_object()) {
+                    echo '<tr>';
+                        echo '<td>'.$row["ask"].'</td><td>'.$row["ans"]."</td>";
+                    echo '</tr>';
+                }
+            echo '</tbody></table>';
+            $result->close();
         }        
-$conn->close();
 ?>
