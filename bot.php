@@ -10,7 +10,15 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
 $sql = "SELECT id, ask, ans FROM detail";
 $result = $conn->query($sql);
-//echo $result;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - ask: " . $row["ask"]. " " . $row["ans"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $arr = array('ไม่บอกอิอิ' => 'ชื่อไร');
