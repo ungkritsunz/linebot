@@ -21,18 +21,17 @@ if (!is_null($events['events'])) {
 
             if($responseMessage!=null){
                 $text = $responseMessage;
-
-                if(strpos($event['message']['text'],"==")!=null){
-                    $findStr = strpos($str,"==");
-                    $subStrAns = substr($$event['message']['text'],0,$findStr);
-                    $subStrAsk = substr($str,$findStr+2);
+            }else{  
+				if(strpos($event['message']['text'],"==")!=null){
+                    $findStr = strpos($event['message']['text'],"==");
+                    $subStrAns = substr($event['message']['text'],0,$findStr);
+                    $subStrAsk = substr($event['message']['text'],$findStr+2);
                     $newArr = array($subStrAns=>$subStrAsk);
                     $arr = array_merge($arr, $newArr);
                     $text = "รู้แล้ว";
-                  }
-
-            }else{  
-                $text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
+                  }else{
+					$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
+				  }
             }
             
 			// Get replyToken
