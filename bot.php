@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
              $text = $event['message']['text'];
             //$inputText = $event['message']['type'];
-            $responseMessage = array_search($$event['message']['text'], $arr);
+            $responseMessage = array_search($event['message']['text'], $arr);
 
             if($responseMessage!=null){
                 $text = $responseMessage.'not null';
