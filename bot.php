@@ -47,7 +47,11 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "ok";
-$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+$arr = array('ดีจ้า' => 'ดีคับ');
+$ans = 'hello';
+$ask = 'bello';
+$newArr = array($ans=>$ask);
+$resultMerge = array_merge($arr, $newArr);
+$responseMessage = array_search('ดีคับ', $result);
+echo $responseMessage;
 
-echo $arr['a'];
