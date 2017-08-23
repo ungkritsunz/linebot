@@ -16,15 +16,15 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
              $text = $event['message']['text'];
-            $inputText = $event['message']['type'];
-            $responseMessage = array_search($inputText, $arr);
+            //$inputText = $event['message']['type'];
+            $responseMessage = array_search($$event['message']['text'], $arr);
 
             if($responseMessage!=null){
                 $text = $responseMessage.'not null';
 
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
-                    $subStrAns = substr($inputText,0,$findStr);
+                    $subStrAns = substr($$event['message']['text'],0,$findStr);
                     $subStrAsk = substr($str,$findStr+2);
                     $newArr = array($subStrAns=>$subStrAsk);
                     $arr = array_merge($arr, $newArr);
@@ -66,6 +66,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo 'a';
+echo 'addd';
 ?>
 
