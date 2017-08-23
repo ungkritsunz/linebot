@@ -1,6 +1,12 @@
 <?php
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
-
+$arr = array('ดีจ้า' => 'ดีคับ');
+$ans = 'hello';
+$ask = 'bello';
+$newArr = array($ans=>$ask);
+$resultMerge = array_merge($arr, $newArr);
+$responseMessage = array_search('ดีคับ', $resultMerge);
+echo $responseMessage;
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -15,7 +21,13 @@ if (!is_null($events['events'])) {
 			// Get text sent
             // $text = $event['message']['text'];
             $inputText = $event['message']['type'] == 'text';
-            $text = "xxxxz";
+            
+            $responseMessage = array_search($inputText, $arr);
+            if($responseMessage!=null){
+                $text = $responseMessage;
+            }else{
+                $text = "xxxxz";
+            }
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -48,13 +60,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$arr = array('ดีจ้า' => 'ดีคับ');
-$ans = 'hello';
-$ask = 'bello';
-$newArr = array($ans=>$ask);
-$resultMerge = array_merge($arr, $newArr);
-$responseMessage = array_search('ดีคับ', $resultMerge);
-echo $responseMessage;
-echo 'เทสๆ';
+
 ?>
 
