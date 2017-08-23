@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 						foreach($arr as $arrs){
 							$text = $text.'+'.$arrs;
 						}
-                    $text = "รู้แล้ว".$arr.'จ้า';
+                   // $text = "รู้แล้ว".$arr.'จ้า';
                   }else{
 					$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
 				  }
