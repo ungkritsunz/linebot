@@ -44,4 +44,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo $result ;
+echo "OK";
