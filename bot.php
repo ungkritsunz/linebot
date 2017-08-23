@@ -6,6 +6,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
+
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -14,9 +15,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
             // $text = $event['message']['text'];
             $text = "xxxxz";
-            if($event['message']['text']=='กินไร'){
-                $text = 'ข้าว';
-            }
+            
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -48,4 +47,7 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "ok";
+$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+
+echo json_encode($arr);
