@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "ตอบบ"
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => "พิมพ์มาดิจ้ะ",
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			echo $result . "\r\n";   
+			echo "พิมพ์มาดิจ้ะ" . "\r\n";   
         }
 	}
 }
