@@ -54,4 +54,6 @@ $newArr = array($ans=>$ask);
 $resultMerge = array_merge($arr, $newArr);
 $responseMessage = array_search('ดีคับ', $result);
 echo $responseMessage;
+echo 'เทสๆ';
+?>
 
