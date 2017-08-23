@@ -1,7 +1,8 @@
 <?php
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $arr = array('aaa' => 'bbb');
-
+$inputText='';
+$responseMessage=''
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -17,8 +18,10 @@ if (!is_null($events['events'])) {
             // $text = $event['message']['text'];
             $inputText = $event['message']['type'];
             $responseMessage = array_search($inputText, $arr);
+            
             if($responseMessage!=null){
                 $text = $responseMessage;
+
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
                     $subStrAns = substr($inputText,0,$findStr);
@@ -27,6 +30,7 @@ if (!is_null($events['events'])) {
                     $arr = array_merge($arr, $newArr);
                     $text = "รู้แล้ว";
                   }
+
             }else{
                 $text = "ไม่รู้จัก".' '.$inputText.' '.$responseMessage;
             }
