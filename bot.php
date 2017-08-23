@@ -2,25 +2,39 @@
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $arr = array('ans' => 'ask');
 $inputText='';
-$responseMessage=''
+$responseMessage='';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
+
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			//$text = $event['message']['text'];
-			$inputText = $event['message']['type'];
-			$responseMessage = array_search($inputText, $arr);
-			$text = $event['message']['type'];;
+             $text = $event['message']['text'];
+            $inputText = $event['message']['type'];
+            $responseMessage = array_search($inputText, $arr);
 
+            if($responseMessage!=null){
+                $text = $responseMessage.'not null';
 
+                if(strpos($inputText,"==")!=null){
+                    $findStr = strpos($str,"==");
+                    $subStrAns = substr($inputText,0,$findStr);
+                    $subStrAsk = substr($str,$findStr+2);
+                    $newArr = array($subStrAns=>$subStrAsk);
+                    $arr = array_merge($arr, $newArr);
+                    $text = "รู้แล้ว";
+                  }
 
+            }else{  
+                $text = 'ไม่รู้จักจ้า';
+            }
+            
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -52,4 +66,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo 'a';
+?>
+
