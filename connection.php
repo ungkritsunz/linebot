@@ -8,5 +8,5 @@ $db = substr($url["path"], 1);
 
 
 $conn = new mysqli($server, $username, $password, $db);
-echo $server.'\n'.$username.'\n'.$password.'\n'.$db;
+echo $server.'<br>'.$username.'<br>'.$password.'<br>'.$db;
 ?>
