@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
             $inputText = $event['message']['type'] == 'text';
             $responseMessage = array_search($inputText, $arr);
             if($responseMessage!=null){
-                $text = $arr.'eiei';
+                $text = $inputText.' '.$responseMessage;
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
                     $subStrAns = substr($inputText,0,$findStr);
