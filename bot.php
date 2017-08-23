@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
                   }
 
             }else{  
-                $text = 'ไม่รู้จักจ้า'.' + '.$event['message']['type'].' + '.$responseMessage;
+                $text = 'ไม่รู้จักจ้า + '.$event['message']['type'].' + '.$responseMessage;
             }
             
 			// Get replyToken
