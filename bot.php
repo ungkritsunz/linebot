@@ -25,8 +25,16 @@ if (!is_null($events['events'])) {
             $responseMessage = array_search($inputText, $arr);
             if($responseMessage!=null){
                 $text = $responseMessage;
+                if(strpos($inputText,"==")!=null){
+                    $findStr = strpos($str,"==");
+                    $subStrAns = substr($inputText,0,$findStr);
+                    $subStrAsk = substr($str,$findStr+2);
+                    $newArr = array($subStrAns=>$subStrAsk);
+                    $arr = array_merge($arr, $newArr);
+                    $text = "รู้แล้ว";
+                  }
             }else{
-                $text = "xxxxz";
+                $text = "ไม่รู้จัก";
             }
             
 			// Get replyToken
