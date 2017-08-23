@@ -9,9 +9,7 @@ $sql = "SELECT id, ask, ans FROM detail";
 	$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
             echo '<table class="table-bordered">';
-            echo '<thead>';
-            echo '<tr> <th>Delete</th> <th>Keywords</th> <th>Answers</th> </tr>';
-            echo '</thead><tbody>';
+            echo '<tbody>';
                 while ($row = $result->fetch_object()) {
                     echo '<tr>';
                         echo '<td>'.$row["ask"].'</td><td>'.$row["ans"]."</td>";
