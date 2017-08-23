@@ -40,9 +40,9 @@ if (!is_null($events['events'])) {
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
-					if($row["ask"]==$event['message']['text']){
-						$text = 'found answer!!';
-					}
+					//if($row["ask"]==$event['message']['text']){
+						$text = $row["ask"].' : '.$event['message']['text'];
+					//}
 					//echo "id: " . $row["id"]. " - ask: " . $row["ask"]. " " . $row["ans"]. "<br>";
 				}
 			} 
