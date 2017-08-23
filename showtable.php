@@ -8,12 +8,12 @@ $conn = new mysqli($server, $username, $password, $db);
 	$sql = "SELECT id, ask, ans FROM detail";
 	$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
-            echo "<table style="width:100%">";
+            echo "<table >";
             while($row = $result->fetch_assoc()) {
-                    // echo ="<tr>";
-                    // echo ="<td>".$row["ask"]."</td>";
-                    // echo ="<td>".$row["ans"]."</td>";
-                    // echo ="</tr>";
+                    echo ="<tr>";
+                    echo ="<td>".$row["ask"]."</td>";
+                    echo ="<td>".$row["ans"]."</td>";
+                    echo ="</tr>";
             }
             echo "</table>";
         }        
