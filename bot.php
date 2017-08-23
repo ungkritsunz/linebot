@@ -1,6 +1,8 @@
 <?php
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
-
+$arr = array('ans' => 'ask');
+$inputText='';
+$responseMessage=''
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -12,7 +14,13 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			//$text = $event['message']['text'];
+			$inputText = $event['message']['type'];
+			$responseMessage = array_search($inputText, $arr);
+			$text = $responseMessage;
+
+
+
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
