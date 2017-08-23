@@ -15,6 +15,7 @@ $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezseP
 $arr = array('ไม่บอกอิอิ' => 'ชื่อไร');
 $inputText='';
 $responseMessage='';
+$text='';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -27,9 +28,9 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-             $text = $event['message']['text'];
+            // $text = $event['message']['text'];
             //$inputText = $event['message']['type'];
-			$responseMessage = array_search($event['message']['text'], $arr);
+			//$responseMessage = array_search($event['message']['text'], $arr);
 			
 			if ($result->num_rows > 0) {
 				// output data of each row
@@ -40,24 +41,24 @@ if (!is_null($events['events'])) {
 					//echo "id: " . $row["id"]. " - ask: " . $row["ask"]. " " . $row["ans"]. "<br>";
 				}
 			} 
+			if($text==''){
+				$text = 'I dont know';
+			}
 
-            if($responseMessage!=null){
-                $text = $responseMessage;
-            }else{  
-				if(strpos($event['message']['text'],"==")!=null){
-                    $findStr = strpos($event['message']['text'],"==");
-                    $subStrAns = substr($event['message']['text'],0,$findStr);
-                    $subStrAsk = substr($event['message']['text'],$findStr+2);
-                    $newArr = array($subStrAns=>$subStrAsk);
-					$arr = array_merge($arr, $newArr);
-						foreach($arr as $arrs){
-							$text = $text.'+'.$arrs;
-						}
-                   // $text = "รู้แล้ว".$arr.'จ้า';
-                  }else{
-					$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
-				  }
-            }
+			if(strpos($event['message']['text'],"==")!=null){
+                $findStr = strpos($event['message']['text'],"==");
+                $subStrAns = substr($event['message']['text'],0,$findStr);
+                $subStrAsk = substr($event['message']['text'],$findStr+2);
+                // $newArr = array($subStrAns=>$subStrAsk);
+				// $arr = array_merge($arr, $newArr);
+				// 	foreach($arr as $arrs){
+				// 		$text = $text.'+'.$arrs;
+				// 	}
+                  // $text = "รู้แล้ว".$arr.'จ้า';
+            }else{
+				$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
+		  	}
+            
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
