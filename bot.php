@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
             $responseMessage = array_search($inputText, $arr);
 
             if($responseMessage!=null){
-                $text = $responseMessage;
+                $text = $responseMessage.'not null';
 
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
                   }
 
             }else{
-                $text = 'ไม่รู้จัก'.'+'.$event['message']['type'].'+'.$responseMessage;
+                $text = 'ไม่รู้จักจ้า'.' + '.$event['message']['type'].' + '.$responseMessage;
             }
             
 			// Get replyToken
