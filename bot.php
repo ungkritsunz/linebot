@@ -15,10 +15,10 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
             // $text = $event['message']['text'];
-            $inputText = $event['message']['type'] == 'text';
+            $inputText = $event['message']['type'];
             $responseMessage = array_search($inputText, $arr);
             if($responseMessage!=null){
-                $text = $inputText.' '.$responseMessage;
+                $text = $responseMessage;
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
                     $subStrAns = substr($inputText,0,$findStr);
