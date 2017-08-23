@@ -12,15 +12,20 @@ $sql = "SELECT id, ask, ans FROM detail";
 $result = $conn->query($sql);
 
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
-$arr = array('ไม่บอกอิอิ' => 'ชื่อไร');
-$inputText='';
-$responseMessage='';
-$text='';
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
+
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+
+		echo "id: " . $row["id"]. " - ask: " . $row["ask"]. " " . $row["ans"]. "<br>";
+	}
+} 
 
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -31,7 +36,7 @@ if (!is_null($events['events'])) {
             // $text = $event['message']['text'];
             //$inputText = $event['message']['type'];
 			//$responseMessage = array_search($event['message']['text'], $arr);
-			
+			$text='';
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
@@ -56,7 +61,7 @@ if (!is_null($events['events'])) {
 				// 	}
                   // $text = "รู้แล้ว".$arr.'จ้า';
             }else{
-				$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
+				$text = 'ไม่รู้จักจ้า++ :'.$event['message']['text'].' :'.$responseMessage;
 		  	}
             
             
