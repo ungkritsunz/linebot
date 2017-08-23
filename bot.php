@@ -16,11 +16,9 @@ if (!is_null($events['events'])) {
 			// Get text sent
             // $text = $event['message']['text'];
             $inputText = $event['message']['type'] == 'text';
-            echo "inputText = ".$inputText.'\n';
             $responseMessage = array_search($inputText, $arr);
-            echo "responseMessage = ".$responseMessage.'\n';
             if($responseMessage!=null){
-                $text = $responseMessage;
+                $text = $responseMessage.'eiei';
                 if(strpos($inputText,"==")!=null){
                     $findStr = strpos($str,"==");
                     $subStrAns = substr($inputText,0,$findStr);
