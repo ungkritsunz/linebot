@@ -41,30 +41,27 @@ if (!is_null($events['events'])) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
 					if($row["ask"]==$event['message']['text']){
-						$text = $row["ans"];
+						$text = 'found answer!!';
 					}
 					//echo "id: " . $row["id"]. " - ask: " . $row["ask"]. " " . $row["ans"]. "<br>";
 				}
 			} 
 			if($text==''){
-				$text = 'I dont know';
-			}
-
-			if(strpos($event['message']['text'],"==")>0){
-                $findStr = strpos($event['message']['text'],"==");
-                $subStrAns = substr($event['message']['text'],0,$findStr);
-				$subStrAsk = substr($event['message']['text'],$findStr+2);
-				$text = 'i know';
-                // $newArr = array($subStrAns=>$subStrAsk);
-				// $arr = array_merge($arr, $newArr);
-				// 	foreach($arr as $arrs){
-				// 		$text = $text.'+'.$arrs;
-				// 	}
-                  // $text = "รู้แล้ว".$arr.'จ้า';
-            }else{
-				$text = 'ไม่รู้จักจ้า++ :'.$event['message']['text'].' :'.$responseMessage;
-		  	}
-            
+				if(strpos($event['message']['text'],"==")>0){
+					$findStr = strpos($event['message']['text'],"==");
+					$subStrAns = substr($event['message']['text'],0,$findStr);
+					$subStrAsk = substr($event['message']['text'],$findStr+2);
+					$text = 'ok, I remember.';
+					// $newArr = array($subStrAns=>$subStrAsk);
+					// $arr = array_merge($arr, $newArr);
+					// 	foreach($arr as $arrs){
+					// 		$text = $text.'+'.$arrs;
+					// 	}
+					  // $text = "รู้แล้ว".$arr.'จ้า';
+				}else{
+					$text = 'I dont know -- :'.$event['message']['text'];
+				  }				
+			}       
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
