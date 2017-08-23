@@ -27,7 +27,10 @@ if (!is_null($events['events'])) {
                     $subStrAns = substr($event['message']['text'],0,$findStr);
                     $subStrAsk = substr($event['message']['text'],$findStr+2);
                     $newArr = array($subStrAns=>$subStrAsk);
-                    $arr = array_merge($arr, $newArr);
+					$arr = array_merge($arr, $newArr);
+						foreach($arr as $arrs){
+							$text = $text.'+'.$arrs;
+						}
                     $text = "รู้แล้ว".$arr.'จ้า';
                   }else{
 					$text = 'ไม่รู้จักจ้า :'.$event['message']['text'].' :'.$responseMessage;
