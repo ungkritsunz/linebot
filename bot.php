@@ -40,13 +40,13 @@ if (!is_null($events['events'])) {
 					VALUES (NULL, '$subStrAsk', '$subStrAns')";
 					
 					if ($conn->query($sql) === TRUE) {
-						$text =  "I remembered!";
+						$text =  "โอเคค จำได้แล้วว";
 					} else {
-						$text =  "I can't Remember!";
+						$text =  "จำไม่ได้บอกเลย";
 					}
 
 				}else{
-					$text = 'I dont know ';
+					$text = 'อันนี้ไม่รู้จักก';
 				  }				
 			}       
             
@@ -82,6 +82,5 @@ if (!is_null($events['events'])) {
 	}
 }
 $conn->close();
-echo 'addd';
 ?>
 
