@@ -62,7 +62,26 @@ if (!is_null($events['events'])) {
 				}else{
 					//$text = 'อันนี้ไม่รู้จักก';
 				  }				
-			}       
+			}   
+			//ลบบ
+			if($text==''){
+				if(strpos($event['message']['text'],"--")>0){
+					$findStr = strpos($event['message']['text'],"--");
+					$subStrAsk = substr($event['message']['text'],0,$findStr);
+					$subStrAns = substr($event['message']['text'],$findStr+2);
+
+					$sql = "DELETE FROM heroku_359cfa1beb94615.detail WHERE ans = '$subStrAns' ";
+					
+					if ($conn->query($sql) === TRUE) {
+						$text =  "ลบแล้วจ้าา";
+					} else {
+						$text =  "ลบไม่ออกก";
+					}
+
+				}else{
+					//$text = 'อันนี้ไม่รู้จักก';
+				  }				
+			} 			    
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
