@@ -76,7 +76,7 @@ if (!is_null($events['events'])) {
 					if ($conn->query($sql) === TRUE) {
 						$text =  "ลบแล้วจ้าา";
 					} else {
-						$text =  "ลบไม่ออกก";
+						$text =  "ลบไม่ออกก  เขียน ลบ-- ตามด้วยคำที่จะลบน้าา";
 					}
 
 				}else{
