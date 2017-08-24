@@ -34,15 +34,13 @@ if (!is_null($events['events'])) {
 							case "หนี้":
 								$text .= $row["ans"]."\n";
 								break;
+							case "เตือน":
+								$text .= $row["ans"]."\n";
+								break;
 							default:
 								$text = $row["ans"];
 						}
-						// if($row["ask"]=='งาน'){	
-						// 	$text .= $row["ans"]."\n";
-						// }else{
-						// 	$text = $row["ans"];
-						// }
-						
+
 					}
 				}
 			} 
@@ -62,7 +60,7 @@ if (!is_null($events['events'])) {
 					}
 
 				}else{
-					$text = 'อันนี้ไม่รู้จักก';
+					//$text = 'อันนี้ไม่รู้จักก';
 				  }				
 			}       
             
