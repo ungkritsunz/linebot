@@ -26,7 +26,12 @@ if (!is_null($events['events'])) {
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					if($row["ask"]==$event['message']['text']){
-						$text = $row["ans"];
+						if($row["ask"]=='งาน'){	
+							$text .= $row["ans"]."<br>";
+						}else{
+							$text = $row["ans"];
+						}
+						
 					}
 				}
 			} 
