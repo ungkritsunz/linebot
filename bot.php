@@ -26,11 +26,22 @@ if (!is_null($events['events'])) {
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					if($row["ask"]==$event['message']['text']){
-						if($row["ask"]=='งาน'){	
-							$text .= $row["ans"]."\n";
-						}else{
-							$text = $row["ans"];
+						
+						switch ($row["ask"]) {
+							case "งาน":
+								$text .= $row["ans"]."\n";
+								break;
+							case "หนี้":
+								$text .= $row["ans"]."\n";
+								break;
+							default:
+								$text = $row["ans"];
 						}
+						// if($row["ask"]=='งาน'){	
+						// 	$text .= $row["ans"]."\n";
+						// }else{
+						// 	$text = $row["ans"];
+						// }
 						
 					}
 				}
