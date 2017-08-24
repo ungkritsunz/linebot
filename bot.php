@@ -69,8 +69,9 @@ if (!is_null($events['events'])) {
 					$findStr = strpos($event['message']['text'],"--");
 					$subStrAsk = substr($event['message']['text'],0,$findStr);
 					$subStrAns = substr($event['message']['text'],$findStr+2);
-
-					$sql = "DELETE FROM heroku_359cfa1beb94615.detail WHERE ans = '$subStrAns' ";
+					if($subStrAsk=='ลบ'){
+						$sql = "DELETE FROM heroku_359cfa1beb94615.detail WHERE ans = '$subStrAns' ";
+					}
 					
 					if ($conn->query($sql) === TRUE) {
 						$text =  "ลบแล้วจ้าา";
