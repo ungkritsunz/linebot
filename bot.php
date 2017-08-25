@@ -86,6 +86,12 @@ if (!is_null($events['events'])) {
 							$response = $GT->translate('th','zh-CN',$word); 
 							$text = $word."   =   ".$response." จ้า";
 							break;
+						case "de":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','de',$word); 
+							$text = $word."   =   ".$response." จ้า";
+							break;
 					}
 					
 				}			
