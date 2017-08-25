@@ -1,4 +1,5 @@
 <?php
+ require_once "GoogleTranslate.php";
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $server = $url["host"];
 $username = $url["user"];
@@ -14,7 +15,6 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-
 
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -43,27 +43,14 @@ if (!is_null($events['events'])) {
 
 					}
 				}
-			} 
-			if($text==''){
-				if(strpos($event['message']['text'],"==")>0){
-					$findStr = strpos($event['message']['text'],"==");
-					$subStrAsk = substr($event['message']['text'],0,$findStr);
-					$subStrAns = substr($event['message']['text'],$findStr+2);
-
-					$sql = "INSERT INTO heroku_359cfa1beb94615.detail (id, ask, ans)
-					VALUES (NULL, '$subStrAsk', '$subStrAns')";
-					
-					if ($conn->query($sql) === TRUE) {
-						$text =  "โอเคค จำได้แล้วว";
-					} else {
-						$text =  "จำไม่ได้บอกเลย";
-					}
-
-				}else{
-					//$text = 'อันนี้ไม่รู้จักก';
-				  }				
-			}   
-			//ลบบ
+			}
+			if($text==''&& strpos($event['message']['text'],"แปล ")==0){
+				$word = $event['message']['text'];
+				$GT = NEW GoogleTranslate();
+				$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+				//echo "<pre>";
+				$text = $word."   =   ".$response;
+			}
 			if($text==''){
 				if(strpos($event['message']['text'],"--")>0){
 					$findStr = strpos($event['message']['text'],"--");
@@ -82,7 +69,27 @@ if (!is_null($events['events'])) {
 				}else{
 					//$text = 'อันนี้ไม่รู้จักก';
 				  }				
-			} 			    
+			}  
+			if($text=='' && strpos($event['message']['text'],"ลบ--")==null){
+				if(strpos($event['message']['text'],"==")>0){
+					$findStr = strpos($event['message']['text'],"==");
+					$subStrAsk = substr($event['message']['text'],0,$findStr);
+					$subStrAns = substr($event['message']['text'],$findStr+2);
+
+					$sql = "INSERT INTO heroku_359cfa1beb94615.detail (id, ask, ans)
+					VALUES (NULL, '$subStrAsk', '$subStrAns')";
+					
+					if ($conn->query($sql) === TRUE) {
+						$text =  "โอเคค จำได้แล้วว";
+					} else {
+						$text =  "จำไม่ได้บอกเลย";
+					}
+
+				}else{
+					//$text = 'อันนี้ไม่รู้จักก';
+				  }				
+			}   
+			//ลบบ			    
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
