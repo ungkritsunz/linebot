@@ -8,6 +8,7 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
 
 $text='';
+$textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
 // Get POST body content
@@ -37,6 +38,9 @@ if (!is_null($events['events'])) {
 							case "เตือน":
 								$text .= $row["ans"]."\n";
 								break;
+							case "กินไรดี":
+								array_push($textEat,$row["ans"]);
+								break;
 							default:
 								$text = $row["ans"];
 						}
@@ -44,8 +48,11 @@ if (!is_null($events['events'])) {
 					}
 				}
 			}
+			if(count($textEat)>0){
+				$text = $textEat[0];
+			}
 			if($event['message']['text']=="keyword"){
-				$text = " แปล = ไทย -> อังกฤษ \n en = ไทย -> อังกฤษ \n ja = ไทย -> ญี่ปุ่น \n sp = ไทย -> สเปน \nko = ไทย -> เกาหลี \n ch = ไทย -> จีน \n de = ไทย -> เยอรมัน";
+				$text = " แปล = ไทย -> อังกฤษ \n en = อังกฤษ -> ไทย \n ja = ไทย -> ญี่ปุ่น \n sp = ไทย -> สเปน \nko = ไทย -> เกาหลี \n ch = ไทย -> จีน \n de = ไทย -> เยอรมัน";
 			}
 			if($text==''){
 				if(strpos($event['message']['text']," ")>0){
