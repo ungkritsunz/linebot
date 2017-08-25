@@ -54,44 +54,38 @@ if (!is_null($events['events'])) {
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
 							$response = $GT->translate('th','en',$word);  
-						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
-						case "eng":
+						case "en":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
 							$response = $GT->translate('en','th',$word);  
-						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
-						case "jp":
+						case "ja":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-						 	$response = $GT->translate('th','jp',$word);  
-						//echo "<pre>";
+						 	$response = $GT->translate('th','ja',$word);  
 							$text = $word."   =   ".$response." จ้า";
 							break;
-						case "spa":
+						case "sp":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
 							$response = $GT->translate('th','sp',$word);  
-							//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
 						case "ko":
-						$word = $subStrAns;
-						$GT = NEW GoogleTranslate();
-						$response = $GT->translate('th','ko',$word); 
-						//echo "<pre>";
-						$text = $word."   =   ".$response." จ้า";
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','ko',$word); 
+							$text = $word."   =   ".$response." จ้า";
 							break;
-					}
-					if($subStrAsk=='แปล'){
-						$word = $subStrAns;
-						$GT = NEW GoogleTranslate();
-						$response = $GT->translate('th','en',$word);  
-						//echo "<pre>";
-						$text = $word."   =   ".$response." จ้า";
+						case "ch":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','zh-CN',$word); 
+							$text = $word."   =   ".$response." จ้า";
+							break;
 					}
 					
 				}			
