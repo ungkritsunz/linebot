@@ -44,12 +44,12 @@ if (!is_null($events['events'])) {
 					}
 				}
 			}
-			if($text==''&& strpos($event['message']['text'],"แปล ")==0){
+			if($text=='' && strpos($event['message']['text'],"แปล ")==0){
 				$word = $event['message']['text'];
 				$GT = NEW GoogleTranslate();
 				$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
 				//echo "<pre>";
-				$text = $word."   =   ".$response;
+				$text = $word."   =   ".$response." + ".strpos($event['message']['text'],"แปล ");
 			}
 			if($text==''){
 				if(strpos($event['message']['text'],"--")>0){
