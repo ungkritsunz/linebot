@@ -44,6 +44,10 @@ if (!is_null($events['events'])) {
 					}
 				}
 			}
+			if($event['message']['text']=="keyword"){
+				$text = 'แปล -> ไทย <br/>'.'en -> อังกฤษ <br/>'.'ja -> ญี่ปุ่น <br/>'.'sp -> สเปน <br/>'.
+				'ko -> เกาหลี <br/>'.'ch -> จีน <br/>'.'de -> เยอรมัน <br/>'.
+			}
 			if($text==''){
 				if(strpos($event['message']['text']," ")>0){
 					$findStr = strpos($event['message']['text']," ");
@@ -84,6 +88,12 @@ if (!is_null($events['events'])) {
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
 							$response = $GT->translate('th','zh-CN',$word); 
+							$text = $word."   =   ".$response." จ้า";
+							break;
+						case "de":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','de',$word); 
 							$text = $word."   =   ".$response." จ้า";
 							break;
 						case "de":
