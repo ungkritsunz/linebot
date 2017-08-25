@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 			}
 			if($event['message']['text']=="keyword"){
 				$text = 'แปล -> ไทย <br/>'.'en -> อังกฤษ <br/>'.'ja -> ญี่ปุ่น <br/>'.'sp -> สเปน <br/>'.
-				'ko -> เกาหลี <br/>'.'ch -> จีน <br/>'.'de -> เยอรมัน <br/>'.
+				'ko -> เกาหลี <br/>'.'ch -> จีน <br/>'.'de -> เยอรมัน <br/>';
 			}
 			if($text==''){
 				if(strpos($event['message']['text']," ")>0){
