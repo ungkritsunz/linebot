@@ -50,7 +50,7 @@ if (!is_null($events['events'])) {
 			}
 			if(count($textEat)>0){
 				$k = array_rand($textEat);
-				$v = $array[$k];
+				$v = $textEat[$k];
 				$text = $v;
 			}
 			if($event['message']['text']=="keyword"){
