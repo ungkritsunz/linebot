@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 				if(strpos($event['message']['text']," ")>0){
 					$findStr = strpos($event['message']['text']," ");
 					$subStrAsk = substr($event['message']['text'],0,$findStr);
-					$subStrAns = substr($event['message']['text'],$findStr+2);
+					$subStrAns = substr($event['message']['text'],$findStr+1);
 					if($subStrAsk=='แปล'){
 						$word = $subStrAns;
 						$GT = NEW GoogleTranslate();
