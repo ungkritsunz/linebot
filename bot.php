@@ -49,6 +49,43 @@ if (!is_null($events['events'])) {
 					$findStr = strpos($event['message']['text']," ");
 					$subStrAsk = substr($event['message']['text'],0,$findStr);
 					$subStrAns = substr($event['message']['text'],$findStr+1);
+					switch ($subStrAsk) {
+						case "แปล":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						//echo "<pre>";
+							$text = $word."   =   ".$response." จ้า";
+							break;
+						case "eng":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('en','th',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						//echo "<pre>";
+							$text = $word."   =   ".$response." จ้า";
+							break;
+						case "jap":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+						 	$response = $GT->translate('th','jap',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						//echo "<pre>";
+							$text = $word."   =   ".$response." จ้า";
+							break;
+							case "spa":
+							$word = $subStrAns;
+							$GT = NEW GoogleTranslate();
+							$response = $GT->translate('th','sp',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+							//echo "<pre>";
+							$text = $word."   =   ".$response." จ้า";
+							break;
+						case "ko":
+						$word = $subStrAns;
+						$GT = NEW GoogleTranslate();
+						$response = $GT->translate('th','ko',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						//echo "<pre>";
+						$text = $word."   =   ".$response." จ้า";
+							break;
+					}
 					if($subStrAsk=='แปล'){
 						$word = $subStrAns;
 						$GT = NEW GoogleTranslate();
