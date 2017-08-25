@@ -49,7 +49,9 @@ if (!is_null($events['events'])) {
 				}
 			}
 			if(count($textEat)>0){
-				$text = $textEat[0];
+				$k = array_rand($textEat);
+				$v = $array[$k];
+				$text = $v;
 			}
 			if($event['message']['text']=="keyword"){
 				$text = " แปล = ไทย -> อังกฤษ \n en = อังกฤษ -> ไทย \n ja = ไทย -> ญี่ปุ่น \n sp = ไทย -> สเปน \nko = ไทย -> เกาหลี \n ch = ไทย -> จีน \n de = ไทย -> เยอรมัน";
