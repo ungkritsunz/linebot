@@ -53,35 +53,35 @@ if (!is_null($events['events'])) {
 						case "แปล":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-							$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+							$response = $GT->translate('th','en',$word);  
 						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
 						case "eng":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-							$response = $GT->translate('en','th',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+							$response = $GT->translate('en','th',$word);  
 						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
 						case "jap":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-						 	$response = $GT->translate('th','jap',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						 	$response = $GT->translate('th','jap',$word);  
 						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
 							case "spa":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-							$response = $GT->translate('th','sp',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+							$response = $GT->translate('th','sp',$word);  
 							//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
 						case "ko":
 						$word = $subStrAns;
 						$GT = NEW GoogleTranslate();
-						$response = $GT->translate('th','ko',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						$response = $GT->translate('th','ko',$word); 
 						//echo "<pre>";
 						$text = $word."   =   ".$response." จ้า";
 							break;
@@ -89,20 +89,14 @@ if (!is_null($events['events'])) {
 					if($subStrAsk=='แปล'){
 						$word = $subStrAns;
 						$GT = NEW GoogleTranslate();
-						$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						$response = $GT->translate('th','en',$word);  
 						//echo "<pre>";
 						$text = $word."   =   ".$response." จ้า";
 					}
 					
 				}			
 			} 			
-			if($checkWord>0){
-				$word = $event['message']['text'];
-				$GT = NEW GoogleTranslate();
-				$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
-				//echo "<pre>";
-				$text = $word."   =   ".$response." + ".strpos($event['message']['text'],"แปล ");
-			}
+
 			if($text==''){
 				if(strpos($event['message']['text'],"--")>0){
 					$findStr = strpos($event['message']['text'],"--");
