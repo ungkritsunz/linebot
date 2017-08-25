@@ -44,7 +44,21 @@ if (!is_null($events['events'])) {
 					}
 				}
 			}
-			$checkWord = strpos($event['message']['text'],"แปล ");
+			if($text==''){
+				if(strpos($event['message']['text']," ")>0){
+					$findStr = strpos($event['message']['text']," ");
+					$subStrAsk = substr($event['message']['text'],0,$findStr);
+					$subStrAns = substr($event['message']['text'],$findStr+2);
+					if($subStrAsk=='แปล'){
+						$word = $subStrAns;
+						$GT = NEW GoogleTranslate();
+						$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
+						//echo "<pre>";
+						$text = $word."   =   ".$response." จ้า";
+					}
+					
+				}			
+			} 			
 			if($checkWord>0){
 				$word = $event['message']['text'];
 				$GT = NEW GoogleTranslate();
