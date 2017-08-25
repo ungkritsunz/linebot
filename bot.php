@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
 					}
 				}
 			}
-			if($text=='' && strpos($event['message']['text'],"แปล ")==null){
+			if($text=='' && strpos($event['message']['text'],"แปล ")!=null){
 				$word = $event['message']['text'];
 				$GT = NEW GoogleTranslate();
 				$response = $GT->translate('th','en',$word);  /// ตรง en เราสามารถเปลี่ยนเป็น ภาษาอื่นได้
