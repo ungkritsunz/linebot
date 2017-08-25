@@ -64,14 +64,14 @@ if (!is_null($events['events'])) {
 						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
-						case "jap":
+						case "jp":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
-						 	$response = $GT->translate('th','jap',$word);  
+						 	$response = $GT->translate('th','jp',$word);  
 						//echo "<pre>";
 							$text = $word."   =   ".$response." จ้า";
 							break;
-							case "spa":
+						case "spa":
 							$word = $subStrAns;
 							$GT = NEW GoogleTranslate();
 							$response = $GT->translate('th','sp',$word);  
