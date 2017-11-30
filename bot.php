@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 							case "หนี้":
 								$text .= $row["ans"]."\n";
 								break;
-							case "เตือน":
+							case "เตือนน":
 								$text .= $row["ans"]."\n";
 								break;
 							case "กินไรดีจ้ะ":
