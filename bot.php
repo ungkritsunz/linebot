@@ -35,10 +35,10 @@ if (!is_null($events['events'])) {
 							case "หนี้":
 								$text .= $row["ans"]."\n";
 								break;
-							case "เตือนน":
+							case "เตือน":
 								$text .= $row["ans"]."\n";
 								break;
-							case "กินไรดีจ้ะ":
+							case "กินไรดี":
 								array_push($textEat,$row["ans"]);
 								break;
 							default:
