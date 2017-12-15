@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			$sql = "SELECT id, ask, ans FROM detail";
 			$result = $conn->query($sql);
-			if($event['message']=="ip"){
+			if($event['message']['text']=="ip"){
 				$text = $_SERVER['REMOTE_HOST'];;
 			}
 			if ($result->num_rows > 0) {
