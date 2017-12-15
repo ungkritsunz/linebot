@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			$sql = "SELECT id, ask, ans FROM detail";
 			$result = $conn->query($sql);
 			if($event['message']['text']=="ip"){
-				$text = "dsdsdsdsd";
+				$text = $_SERVER['REMOTE_HOST'];
 			}
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
