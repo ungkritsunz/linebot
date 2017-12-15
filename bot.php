@@ -24,14 +24,14 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			$sql = "SELECT id, ask, ans FROM detail";
 			$result = $conn->query($sql);
+			if($event['message']=="ip"){
+				$text = $_SERVER['REMOTE_HOST'];;
+			}
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					if($row["ask"]==$event['message']['text']){
 						
 						switch ($row["ask"]) {
-							case "ip":
-								$text = $_SERVER['REMOTE_HOST'];
-								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
 								break;
