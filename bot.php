@@ -29,6 +29,9 @@ if (!is_null($events['events'])) {
 					if($row["ask"]==$event['message']['text']){
 						
 						switch ($row["ask"]) {
+							case "ip":
+								$text = $_SERVER['REMOTE_HOST'];
+								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
 								break;
@@ -38,13 +41,9 @@ if (!is_null($events['events'])) {
 							case "เตือน":
 								$text .= $row["ans"]."\n";
 								break;
-							case "กินไรดีจ้ะ":
+							case "กินไรดี":
 								array_push($textEat,$row["ans"]);
 								break;
-							case "เปิดพัดลม":
-								array_push($textEat,$row["ans"]);
-								break;
-
 							default:
 								$text = $row["ans"];
 						}
