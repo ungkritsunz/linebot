@@ -16,7 +16,15 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-
+function getIP(){
+    // ตรวจสอบ IP กรณีการใช้งาน share internet
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+      $ip=$_SERVER['HTTP_CLIENT_IP'];
+    }else{
+      $ip=$_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -25,7 +33,7 @@ if (!is_null($events['events'])) {
 			$sql = "SELECT id, ask, ans FROM detail";
 			$result = $conn->query($sql);
 			if($event['message']['text']=="ip"){
-				$text = $_SERVER['REMOTE_HOST'];
+				$text = getIP();
 			}
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
