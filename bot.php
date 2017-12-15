@@ -41,6 +41,10 @@ if (!is_null($events['events'])) {
 							case "กินไรดี":
 								array_push($textEat,$row["ans"]);
 								break;
+							case "เปิดพัดลม":
+								array_push($textEat,$row["ans"]);
+								break;
+
 							default:
 								$text = $row["ans"];
 						}
