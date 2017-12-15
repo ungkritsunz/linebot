@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 							case "เตือน":
 								$text .= $row["ans"]."\n";
 								break;
-							case "กินไรดี":
+							case "กินไรดีจ้ะ":
 								array_push($textEat,$row["ans"]);
 								break;
 							case "เปิดพัดลม":
