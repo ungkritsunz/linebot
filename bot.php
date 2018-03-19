@@ -40,6 +40,9 @@ if (!is_null($events['events'])) {
 					if($row["ask"]==$event['message']['text']){
 						
 						switch ($row["ask"]) {
+							case "เปิดพัดลม":
+							$text = "เปิดแล้วงับ";
+								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
 								break;
@@ -51,6 +54,9 @@ if (!is_null($events['events'])) {
 								break;
 							case "กินไรดี":
 								array_push($textEat,$row["ans"]);
+								break;
+							case "ซันจู":
+								$text .= $row["ans"]."\n";
 								break;
 							default:
 								$text = $row["ans"];
