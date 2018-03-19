@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "เปิดพัดลม":
-								$url = 'https://translate.google.co.th'; 
+								$url = 'http://localhost/test.php'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = print_r($content);
+							$text = "เปิดแล้วงับ";
 								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
