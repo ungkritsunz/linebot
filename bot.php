@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "เปิดพัดลม":
-								$url = 'http://localhost/test.php'; 
+								$url = 'https://translate.google.co.th'; 
 								
 								$data = "fn=login&test=1";
 								
