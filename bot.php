@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วงับ";
+							$text = print_r($content);
 								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
