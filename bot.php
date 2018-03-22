@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 					if($row["ask"]==$event['message']['text']){
 						
 						switch ($row["ask"]) {
-							case "opentosf":
+							case "เปิดพัดลม1":
 								$url = 'http://118.174.229.106:9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 							$text = "เปิดแล้วค่า";
 								break;
 
-							case "closetosf":
+							case "ปิดพัดลม1":
 								$url = 'http://118.174.229.106:9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
