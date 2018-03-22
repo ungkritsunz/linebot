@@ -55,8 +55,6 @@ if (!is_null($events['events'])) {
 								$content = curl_exec( $ch );
 								curl_close($ch);
 								
-								print_r($content);
-								
 								}catch(Exception $ex){
 								
 								echo $ex;
@@ -78,8 +76,6 @@ if (!is_null($events['events'])) {
 								curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
 								$content = curl_exec( $ch );
 								curl_close($ch);
-								
-								print_r($content);
 								
 								}catch(Exception $ex){
 								
