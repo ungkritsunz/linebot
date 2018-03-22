@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "เปิดพัดลม":
-								$url = 'http://localhost/test.php'; 
+								$url = 'http://118.174.229.106:9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -61,7 +61,31 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วงับ";
+							$text = "เปิดแล้วค่า";
+								break;
+
+							case "ปิดพัดลม":
+								$url = 'http://118.174.229.106:9999/LED=OFF'; 
+								
+								$data = "fn=login&test=1";
+								
+								try{
+								$ch = curl_init();
+								curl_setopt( $ch, CURLOPT_URL, $url );
+								curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+								curl_setopt( $ch, CURLOPT_POST, true );
+								curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+								$content = curl_exec( $ch );
+								curl_close($ch);
+								
+								print_r($content);
+								
+								}catch(Exception $ex){
+								
+								echo $ex;
+								}
+							$text = "ปิดแล้วค่า";
 								break;
 							case "งาน":
 								$text .= $row["ans"]."\n";
