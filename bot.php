@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 					if($row["ask"]==$event['message']['text']){
 						
 						switch ($row["ask"]) {
-							case "เปิดพัดลม":
+							case "OPEN TOSF":
 								$url = 'http://118.174.229.106:9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
@@ -62,7 +62,50 @@ if (!is_null($events['events'])) {
 							$text = "เปิดแล้วค่า";
 								break;
 
-							case "ปิดพัดลม":
+							case "CLOSE TOSF":
+								$url = 'http://118.174.229.106:9999/LED=OFF'; 
+								
+								$data = "fn=login&test=1";
+								
+								try{
+								$ch = curl_init();
+								curl_setopt( $ch, CURLOPT_URL, $url );
+								curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+								curl_setopt( $ch, CURLOPT_POST, true );
+								curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+								$content = curl_exec( $ch );
+								curl_close($ch);
+								
+								}catch(Exception $ex){
+								
+								echo $ex;
+								}
+							$text = "ปิดแล้วค่า";
+								break;
+								case "เปิดสวิตซ์":
+								$url = 'http://118.174.229.106:9999/LED=ON'; 
+								
+								$data = "fn=login&test=1";
+								
+								try{
+								$ch = curl_init();
+								curl_setopt( $ch, CURLOPT_URL, $url );
+								curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+								curl_setopt( $ch, CURLOPT_POST, true );
+								curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+								$content = curl_exec( $ch );
+								curl_close($ch);
+								
+								}catch(Exception $ex){
+								
+								echo $ex;
+								}
+							$text = "เปิดแล้วค่า";
+								break;
+
+							case "ปิดสวิตซ์":
 								$url = 'http://118.174.229.106:9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
