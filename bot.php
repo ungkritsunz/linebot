@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "OPEN TOSF":
-								$url = 'http://101.109.47.149:9999/LED=ON'; 
+								$url = 'http://125.25.41.240:9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
-								$url = 'http://101.109.47.149:9999/LED=OFF'; 
+								$url = 'http://125.25.41.240:9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -80,10 +80,10 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "ปิดแล้วค่า";
+							$text = "ปิดแล้วค่ะ";
 								break;
 								case "เปิดสวิตซ์":
-								$url = 'http://101.109.47.149:9999/LED=ON'; 
+								$url = 'http://125.25.41.240:9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -105,7 +105,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "ปิดสวิตซ์":
-								$url = 'http://101.109.47.149:9999/LED=OFF'; 
+								$url = 'http://125.25.41.240:9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
