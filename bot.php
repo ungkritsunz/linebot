@@ -101,7 +101,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วค่า";
+							$text = "เปิดแล้วค่าา";
 								break;
 
 							case "ปิดสวิตซ์":
