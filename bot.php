@@ -6,6 +6,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
+//แก้ไอพีที่นี่ public ip เช่น 125.25.58.161 
 $publicip001 = '125.25.58.161';
 $text='';
 $textEat=array();
@@ -62,7 +63,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
-								$url = 'http://'.$publicip001.'/LED=OFF'; 
+								$url = 'http://'.$publicip001.':/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
