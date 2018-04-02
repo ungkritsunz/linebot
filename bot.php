@@ -6,7 +6,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
-
+$publicip001 = '125.25.58.161';
 $text='';
 $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "OPEN TOSF":
-								$url = 'http://125.25.58.161:9999/LED=ON'; 
+								$url = 'http://'.$publicip001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
-								$url = 'http://125.25.58.161:9999/LED=OFF'; 
+								$url = 'http://'.$publicip001.'/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -83,7 +83,7 @@ if (!is_null($events['events'])) {
 							$text = "ปิดแล้วค่ะ";
 								break;
 								case "เปิดสวิตซ์":
-								$url = 'http://125.25.58.161:9999/LED=ON'; 
+								$url = 'http://'.$publicip001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -105,7 +105,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "ปิดสวิตซ์":
-								$url = 'http://125.25.58.161:9999/LED=OFF'; 
+								$url = 'http://'.$publicip001.':9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
