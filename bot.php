@@ -123,7 +123,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "ปิดแล้วค่า";
+							$text = "ปิดแล้วจ้า";
 								break;
 
 							case "งาน":
