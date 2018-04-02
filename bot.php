@@ -10,6 +10,8 @@ $text='';
 $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
+// Fix Ip Here
+$publicIp001 = "180.180.11.55";
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -40,7 +42,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "OPEN TOSF":
-								$url = 'http://125.25.58.161:9999/LED=ON'; 
+								$url = 'http://'.$publicIp001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -61,7 +63,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
-								$url = 'http://125.25.58.161:9999/LED=OFF'; 
+								$url = 'http://'.$publicIp001.':9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -82,7 +84,7 @@ if (!is_null($events['events'])) {
 							$text = "ปิดแล้วค่ะ";
 								break;
 								case "เปิดสวิตซ์":
-								$url = 'http://125.25.58.161:9999/LED=ON'; 
+								$url = 'http://'.$publicIp001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -104,7 +106,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "ปิดสวิตซ์":
-								$url = 'http://125.25.58.161:9999/LED=OFF'; 
+								$url = 'http://'.$publicIp001.':9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
