@@ -6,8 +6,13 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
+<<<<<<< HEAD
 //
 $publicip = '125.25.58.161';
+=======
+//แก้ไอพีที่นี่ public ip เช่น 125.25.58.161 
+$publicip001 = '125.25.58.161';
+>>>>>>> 30f198a61a1ef1332ad80ea5492e4d1ccac3f1d4
 $text='';
 $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
@@ -42,7 +47,11 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "OPEN TOSF":
+<<<<<<< HEAD
 								$url = 'http://'.$publicip.':9999/LED=ON'; 
+=======
+								$url = 'http://'.$publicip001.':9999/LED=ON'; 
+>>>>>>> 30f198a61a1ef1332ad80ea5492e4d1ccac3f1d4
 								
 								$data = "fn=login&test=1";
 								
@@ -63,7 +72,11 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
+<<<<<<< HEAD
 								$url = 'http://'.$publicip.':9999/LED=OFF'; 
+=======
+								$url = 'http://'.$publicip001.':9999/LED=OFF'; 
+>>>>>>> 30f198a61a1ef1332ad80ea5492e4d1ccac3f1d4
 								
 								$data = "fn=login&test=1";
 								
@@ -84,7 +97,11 @@ if (!is_null($events['events'])) {
 							$text = "ปิดแล้วค่ะ";
 								break;
 								case "เปิดสวิตซ์":
+<<<<<<< HEAD
 								$url = 'http://'.$publicip.':9999/LED=ON'; 
+=======
+								$url = 'http://'.$publicip001.':9999/LED=ON'; 
+>>>>>>> 30f198a61a1ef1332ad80ea5492e4d1ccac3f1d4
 								
 								$data = "fn=login&test=1";
 								
@@ -102,11 +119,15 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วค่า";
+							$text = "เปิดแล้วค่าา";
 								break;
 
 							case "ปิดสวิตซ์":
+<<<<<<< HEAD
 								$url = 'http://'.$publicip.':9999/LED=OFF'; 
+=======
+								$url = 'http://'.$publicip001.':9999/LED=OFF'; 
+>>>>>>> 30f198a61a1ef1332ad80ea5492e4d1ccac3f1d4
 								
 								$data = "fn=login&test=1";
 								
@@ -124,7 +145,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "ปิดแล้วค่า";
+							$text = "ปิดแล้วจ้า";
 								break;
 
 							case "งาน":
