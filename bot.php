@@ -8,7 +8,7 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
 <<<<<<< HEAD
 //แก้ไอพีที่นี่ public ip เช่น 125.25.58.161 
-$publicip001 = '118.174.229.86';
+$publicip001 = '125.27.92.99';
 =======
 >>>>>>> ef6c1d634bf4c551045831ee0e163d9b5947fe46
 $text='';
