@@ -6,12 +6,17 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
+<<<<<<< HEAD
 //แก้ไอพีที่นี่ public ip เช่น 125.25.58.161 
 $publicip001 = '118.174.229.86';
+=======
+>>>>>>> ef6c1d634bf4c551045831ee0e163d9b5947fe46
 $text='';
 $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
+// Fix Ip Here
+$publicIp001 = "180.180.11.55";
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -42,7 +47,7 @@ if (!is_null($events['events'])) {
 						
 						switch ($row["ask"]) {
 							case "OPEN TOSF":
-								$url = 'http://'.$publicip001.':9999/LED=ON'; 
+								$url = 'http://'.$publicIp001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -63,7 +68,7 @@ if (!is_null($events['events'])) {
 								break;
 
 							case "CLOSE TOSF":
-								$url = 'http://'.$publicip001.':/LED=OFF'; 
+								$url = 'http://'.$publicIp001.':9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -84,7 +89,7 @@ if (!is_null($events['events'])) {
 							$text = "ปิดแล้วค่ะ";
 								break;
 								case "เปิดสวิตซ์":
-								$url = 'http://'.$publicip001.':9999/LED=ON'; 
+								$url = 'http://'.$publicIp001.':9999/LED=ON'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -102,11 +107,11 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วค่าา";
+							$text = "เปิดแล้วค่า";
 								break;
 
 							case "ปิดสวิตซ์":
-								$url = 'http://'.$publicip001.':9999/LED=OFF'; 
+								$url = 'http://'.$publicIp001.':9999/LED=OFF'; 
 								
 								$data = "fn=login&test=1";
 								
@@ -124,7 +129,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "ปิดแล้วจ้า";
+							$text = "ปิดแล้วค่า";
 								break;
 
 							case "งาน":
