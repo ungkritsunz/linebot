@@ -104,7 +104,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วค่า";
+							$text = 'http://'.$publicIp001.':9999/LED=ON';
 								break;
 
 							case "ปิดสวิตซ์":
