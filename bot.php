@@ -6,17 +6,24 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);			
 $conn = new mysqli($server, $username, $password, $db);
-<<<<<<< HEAD
 //แก้ไอพีที่นี่ public ip เช่น 125.25.58.161 
+<<<<<<< HEAD
 $publicip001 = '101.109.87.194';
 =======
 >>>>>>> ef6c1d634bf4c551045831ee0e163d9b5947fe46
+=======
+>>>>>>> 9b4fc686c03b9ed6bba24d679e310e794ae9060c
 $text='';
 $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
+<<<<<<< HEAD
 // Fix Ip Here
 $publicIp001 = "1.179.241.177";
+=======
+// Fix Ip Here113.53.8711311111ๅๅด้เดเ23424311111jhghjhjjhgjhghjghjkjhkjhjk
+$publicIp001 = "1.179.237.221";
+>>>>>>> 9b4fc686c03b9ed6bba24d679e310e794ae9060c
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -107,7 +114,7 @@ if (!is_null($events['events'])) {
 								
 								echo $ex;
 								}
-							$text = "เปิดแล้วค่า";
+							$text = 'http://'.$publicIp001.':9999/LED=ON';
 								break;
 
 							case "ปิดสวิตซ์":
