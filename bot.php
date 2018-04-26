@@ -12,7 +12,7 @@ $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
 // Fix Ip Here113.53.8711311111ๅๅด้เดเ23424311111jhghjhjjhgjhghjghjkjhkjhjk
-$publicIp001 = "1.179.237.221";
+$publicIp001 = "101.109.87.194";
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
