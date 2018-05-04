@@ -11,7 +11,7 @@ $textEat=array();
 $access_token = 'y3aNFkkeuf8tR8fXhNQU0LvyrfM3Vhw0So3PjsQ1gxNh/5wKOJFABxLtZgezsePRNZEm7QocgsYopcv7vH4Lr+9Lz806DgeCTpeFKas8xayGjMlYqd4lUMCaaDWIOwUiWc2AhEiLnUFHFyp9pYvAFAdB04t89/1O/w1cDnyilFU=';
 $checkWord = "";
 // Fix Ip Here
-$publicIp001 = "1.20.184.22";
+$publicIp001 = "113.53.53.150";
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
