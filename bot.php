@@ -302,7 +302,7 @@ if (!is_null($events['events'])) {
 						  1 => 
 						  array (
 							'type' => 'text',
-							'text' => 'Brown Store',
+							'text' => $text,
 							'weight' => 'bold',
 							'size' => 'xxl',
 							'margin' => 'md',
