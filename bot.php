@@ -266,6 +266,7 @@ if (!is_null($events['events'])) {
 			// 	'messages' => [$messages],
 			// ];
 			$url = 'https://api.line.me/v2/bot/message/push';
+			$testText = 'xxxxxx';
 			$data = array (
 				'to' => 'Ud5aa526b2ce8b0bb3be2f3d019c673e7',
 				'messages' => 
@@ -302,7 +303,7 @@ if (!is_null($events['events'])) {
 						  1 => 
 						  array (
 							'type' => 'text',
-							'text' => ".$text.",
+							'text' => ".$testText.",
 							'weight' => 'bold',
 							'size' => 'xxl',
 							'margin' => 'md',
