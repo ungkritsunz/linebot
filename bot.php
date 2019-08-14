@@ -303,7 +303,7 @@ if (!is_null($events['events'])) {
 						  1 => 
 						  array (
 							'type' => 'text',
-							'text' => ".$testText.",
+							'text' => $event['message']['text'],
 							'weight' => 'bold',
 							'size' => 'xxl',
 							'margin' => 'md',
