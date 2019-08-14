@@ -302,7 +302,7 @@ if (!is_null($events['events'])) {
 						  1 => 
 						  array (
 							'type' => 'text',
-							'text' => 'dddddd',
+							'text' => $row["ask"],
 							'weight' => 'bold',
 							'size' => 'xxl',
 							'margin' => 'md',
