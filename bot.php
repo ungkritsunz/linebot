@@ -266,217 +266,273 @@ if (!is_null($events['events'])) {
 			// 	'messages' => [$messages],
 			// ];
 			$url = 'https://api.line.me/v2/bot/message/push';
-			$data = '{
-				"type": "bubble",
-				"styles": {
-				  "footer": {
-					"separator": true
-				  }
-				},
-				"body": {
-				  "type": "box",
-				  "layout": "vertical",
-				  "spacing": "md",
-				  "contents": [
-					{
-					  "type": "text",
-					  "text": "RECEIPT",
-					  "weight": "bold",
-					  "color": "#1DB446",
-					  "size": "sm"
-					},
-					{
-					  "type": "text",
-					  "text": "Brown Store",
-					  "weight": "bold",
-					  "size": "xxl",
-					  "margin": "md"
-					},
-					{
-					  "type": "text",
-					  "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-					  "size": "xs",
-					  "color": "#aaaaaa",
-					  "wrap": true
-					},
-					{
-					  "type": "separator",
-					  "margin": "xxl"
-					},
-					{
-					  "type": "box",
-					  "layout": "vertical",
-					  "margin": "xxl",
-					  "spacing": "sm",
-					  "contents": [
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "Energy Drink",
-							  "size": "sm",
-							  "color": "#555555",
-							  "flex": 0
-							},
-							{
-							  "type": "text",
-							  "text": "$2.99",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "Chewing Gum",
-							  "size": "sm",
-							  "color": "#555555",
-							  "flex": 0
-							},
-							{
-							  "type": "text",
-							  "text": "$0.99",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "Bottled Water",
-							  "size": "sm",
-							  "color": "#555555",
-							  "flex": 0
-							},
-							{
-							  "type": "text",
-							  "text": "$3.33",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "separator",
-						  "margin": "xxl"
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "margin": "xxl",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "ITEMS",
-							  "size": "sm",
-							  "color": "#555555"
-							},
-							{
-							  "type": "text",
-							  "text": "3",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "TOTAL",
-							  "size": "sm",
-							  "color": "#555555"
-							},
-							{
-							  "type": "text",
-							  "text": "$7.31",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "CASH",
-							  "size": "sm",
-							  "color": "#555555"
-							},
-							{
-							  "type": "text",
-							  "text": "$8.0",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						},
-						{
-						  "type": "box",
-						  "layout": "horizontal",
-						  "contents": [
-							{
-							  "type": "text",
-							  "text": "CHANGE",
-							  "size": "sm",
-							  "color": "#555555"
-							},
-							{
-							  "type": "text",
-							  "text": "$0.69",
-							  "size": "sm",
-							  "color": "#111111",
-							  "align": "end"
-							}
-						  ]
-						}
-					  ]
-					},
-					{
-					  "type": "separator",
-					  "margin": "xxl"
-					},
-					{
-					  "type": "button",
-					  "style": "primary",
-					  "action": {
-						"type": "uri",
-						"label": "Primary style button",
-						"uri": "https://developers.line.me"
-					  }
-					},
-					{
-					  "type": "button",
-					  "style": "primary",
-					  "action": {
-						"type": "uri",
-						"label": "Primary style button",
-						"uri": "https://developers.line.me"
-					  }
-					}
-				  ]
-				}
-			  }';
+			$data = array (
+				'to' => 'Ud5aa526b2ce8b0bb3be2f3d019c673e7',
+				'messages' => 
+				array (
+				  0 => 
+				  array (
+					'type' => 'flex',
+					'altText' => 'this is flex messages sunsosay',
+					'contents' => 
+					array (
+					  'type' => 'bubble',
+					  'styles' => 
+					  array (
+						'footer' => 
+						array (
+						  'separator' => true,
+						),
+					  ),
+					  'body' => 
+					  array (
+						'type' => 'box',
+						'layout' => 'vertical',
+						'spacing' => 'md',
+						'contents' => 
+						array (
+						  0 => 
+						  array (
+							'type' => 'text',
+							'text' => 'RECEIPT',
+							'weight' => 'bold',
+							'color' => '#1DB446',
+							'size' => 'sm',
+						  ),
+						  1 => 
+						  array (
+							'type' => 'text',
+							'text' => 'Brown Store',
+							'weight' => 'bold',
+							'size' => 'xxl',
+							'margin' => 'md',
+						  ),
+						  2 => 
+						  array (
+							'type' => 'text',
+							'text' => 'Miraina Tower, 4-1-6 Shinjuku, Tokyo',
+							'size' => 'xs',
+							'color' => '#aaaaaa',
+							'wrap' => true,
+						  ),
+						  3 => 
+						  array (
+							'type' => 'separator',
+							'margin' => 'xxl',
+						  ),
+						  4 => 
+						  array (
+							'type' => 'box',
+							'layout' => 'vertical',
+							'margin' => 'xxl',
+							'spacing' => 'sm',
+							'contents' => 
+							array (
+							  0 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'Energy Drink',
+									'size' => 'sm',
+									'color' => '#555555',
+									'flex' => 0,
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$2.99',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  1 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'Chewing Gum',
+									'size' => 'sm',
+									'color' => '#555555',
+									'flex' => 0,
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$0.99',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  2 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'Bottled Water',
+									'size' => 'sm',
+									'color' => '#555555',
+									'flex' => 0,
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$3.33',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  3 => 
+							  array (
+								'type' => 'separator',
+								'margin' => 'xxl',
+							  ),
+							  4 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'margin' => 'xxl',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'ITEMS',
+									'size' => 'sm',
+									'color' => '#555555',
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '3',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  5 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'TOTAL',
+									'size' => 'sm',
+									'color' => '#555555',
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$7.31',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  6 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'CASH',
+									'size' => 'sm',
+									'color' => '#555555',
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$8.0',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							  7 => 
+							  array (
+								'type' => 'box',
+								'layout' => 'horizontal',
+								'contents' => 
+								array (
+								  0 => 
+								  array (
+									'type' => 'text',
+									'text' => 'CHANGE',
+									'size' => 'sm',
+									'color' => '#555555',
+								  ),
+								  1 => 
+								  array (
+									'type' => 'text',
+									'text' => '$0.69',
+									'size' => 'sm',
+									'color' => '#111111',
+									'align' => 'end',
+								  ),
+								),
+							  ),
+							),
+						  ),
+						  5 => 
+						  array (
+							'type' => 'separator',
+							'margin' => 'xxl',
+						  ),
+						  6 => 
+						  array (
+							'type' => 'button',
+							'style' => 'primary',
+							'action' => 
+							array (
+							  'type' => 'uri',
+							  'label' => 'Primary style button',
+							  'uri' => 'https://developers.line.me',
+							),
+						  ),
+						  7 => 
+						  array (
+							'type' => 'button',
+							'style' => 'primary',
+							'action' => 
+							array (
+							  'type' => 'uri',
+							  'label' => 'Primary style button',
+							  'uri' => 'https://developers.line.me',
+							),
+						  ),
+						),
+					  ),
+					),
+				  ),
+				),
+			  );
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
