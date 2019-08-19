@@ -17,15 +17,20 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 //รับ id ว่ามาจากไหน
-if(isset($events['events'][0]['source']['userId'])){
-	$id = $events['events'][0]['source']['userId'];
- }
- else if(isset($events['events'][0]['source']['groupId'])){
+if(isset($events['events'][0]['source']['groupId'])){
 	$id = $events['events'][0]['source']['groupId'];
  }
- else if(isset($events['events'][0]['source']['room'])){
-	$id = $events['events'][0]['source']['room'];
- }
+
+// if(isset($events['events'][0]['source']['userId'])){
+// 	$id = $events['events'][0]['source']['userId'];
+//  }
+//  else if(isset($events['events'][0]['source']['groupId'])){
+// 	$id = $events['events'][0]['source']['groupId'];
+//  }
+//  else if(isset($events['events'][0]['source']['room'])){
+// 	$id = $events['events'][0]['source']['room'];
+//  }
+
 // $userId = $events['source']['userId'];
 
 // Validate parsed JSON data
