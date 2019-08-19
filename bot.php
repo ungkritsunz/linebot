@@ -16,7 +16,7 @@ $publicIp001 = "1.20.90.190";
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-echo $events;
+echo 'sdfsdfsd';
 // Validate parsed JSON data
 function getIP(){
     // ตรวจสอบ IP กรณีการใช้งาน share internet
@@ -249,7 +249,11 @@ if (!is_null($events['events'])) {
 					//$text = 'อันนี้ไม่รู้จักก';
 				  }				
 			}   
-			//ลบบ			    
+			//ลบบ		
+			
+			$json = file_get_contents('php://input');
+			$request = json_decode($json, true);
+			$userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -270,7 +274,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$testText = 'xxxxxx';
 			$data = array (
-				'to' => $uid,
+				'to' => $userId,
 				'messages' => 
 				array (
 				  0 => 
