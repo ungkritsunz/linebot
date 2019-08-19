@@ -16,10 +16,8 @@ $publicIp001 = "1.20.90.190";
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-echo 'sdfsdfsd';
-//$json = file_get_contents('php://input');
-// $request = json_decode($json, true);
-// $userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
+
+$userId = $events['originalDetectIntentRequest']['payload']['data']['source']['userId'];
 
 // Validate parsed JSON data
 function getIP(){
@@ -271,9 +269,8 @@ if (!is_null($events['events'])) {
 			// 	'messages' => [$messages],
 			// ];
 			$url = 'https://api.line.me/v2/bot/message/push';
-			$testText = 'xxxxxx';
 			$data = array (
-				'to' => $uid,
+				'to' => $userId,
 				'messages' => 
 				array (
 				  0 => 
@@ -550,7 +547,6 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-			echo $post;
 			echo $result . "\r\n";
 		}
 	}
