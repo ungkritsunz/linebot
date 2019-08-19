@@ -17,7 +17,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$userId = $events['originalDetectIntentRequest']['payload']['data']['source']['userId'];
+$userId = $events['source']['userId'];
 
 // Validate parsed JSON data
 function getIP(){
