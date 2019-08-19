@@ -17,6 +17,10 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 echo 'sdfsdfsd';
+//$json = file_get_contents('php://input');
+// $request = json_decode($json, true);
+// $userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
+
 // Validate parsed JSON data
 function getIP(){
     // ตรวจสอบ IP กรณีการใช้งาน share internet
@@ -250,11 +254,6 @@ if (!is_null($events['events'])) {
 				  }				
 			}   
 			//ลบบ		
-			
-			$json = file_get_contents('php://input');
-			$request = json_decode($json, true);
-			$userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
-            
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$uid = $event['userId'];
@@ -274,7 +273,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$testText = 'xxxxxx';
 			$data = array (
-				'to' => $userId,
+				'to' => $uid,
 				'messages' => 
 				array (
 				  0 => 
@@ -551,7 +550,7 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-
+			echo $post;
 			echo $result . "\r\n";
 		}
 	}
