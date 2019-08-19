@@ -16,6 +16,7 @@ $publicIp001 = "1.20.90.190";
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+echo $events;
 // Validate parsed JSON data
 function getIP(){
     // ตรวจสอบ IP กรณีการใช้งาน share internet
