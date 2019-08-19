@@ -252,6 +252,7 @@ if (!is_null($events['events'])) {
             
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$uid = $event['userId'];
 
 			// Build message to reply back
 			$messages = [
@@ -268,7 +269,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$testText = 'xxxxxx';
 			$data = array (
-				'to' => $replyToken,
+				'to' => $uid,
 				'messages' => 
 				array (
 				  0 => 
