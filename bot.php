@@ -16,8 +16,17 @@ $publicIp001 = "1.20.90.190";
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-
-$userId = $events['source']['userId'];
+//รับ id ว่ามาจากไหน
+if(isset($events['events'][0]['source']['userId']){
+	$id = $events['events'][0]['source']['userId'];
+ }
+ else if(isset($events['events'][0]['source']['groupId'])){
+	$id = $events['events'][0]['source']['groupId'];
+ }
+ else if(isset($events['events'][0]['source']['room'])){
+	$id = $events['events'][0]['source']['room'];
+ }
+// $userId = $events['source']['userId'];
 
 // Validate parsed JSON data
 function getIP(){
@@ -270,7 +279,7 @@ if (!is_null($events['events'])) {
 			// ];
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = array (
-				'to' => $userId,
+				'to' => $id,
 				'messages' => 
 				array (
 				  0 => 
