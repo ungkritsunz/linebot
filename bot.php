@@ -262,7 +262,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-			$substr = substr($text, 0, 4);
+			$substr = substr($event['message']['text'], 0, 4);
 			if($substr!='flex'){
 			//Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -308,7 +308,7 @@ if (!is_null($events['events'])) {
 									1 =>
 									array(
 										'type' => 'text',
-										'text' => substr($event['message']['text'],5),
+										'text' => substr($event['message']['text'],6),
 										'weight' => 'bold',
 										'size' => 'xxl',
 										'margin' => 'md',
