@@ -308,7 +308,7 @@ if (!is_null($events['events'])) {
 									1 =>
 									array(
 										'type' => 'text',
-										'text' => substr($event['message']['text'],6),
+										'text' => substr($event['message']['text'],4),
 										'weight' => 'bold',
 										'size' => 'xxl',
 										'margin' => 'md',
